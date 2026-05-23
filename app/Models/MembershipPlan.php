@@ -11,7 +11,7 @@ class MembershipPlan extends Model
 
     protected $guarded = ['id'];
 
-    protected $cast = [
+    protected $casts = [
         'features'      => 'array',
         'is_popular'    => 'boolean',
         'is_active'     => 'boolean'
