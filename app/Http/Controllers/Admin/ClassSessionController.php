@@ -18,7 +18,7 @@ class ClassSessionController extends Controller
 
     public function __construct(private ClassSessionService $classSessionService){}
 
-    public function indeex(Request $request):JsonResponse
+    public function index(Request $request):JsonResponse
     {
         $classes = $this->classSessionService->list($request->all());
         return $this->paginated(
