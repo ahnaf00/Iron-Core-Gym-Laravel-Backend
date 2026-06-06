@@ -50,6 +50,13 @@ class ContactMessageService
         return $message->fresh();
     }
 
+    public function markAsUnread(int $id):ContactMessage
+    {
+        $message = ContactMessage::findOrFail($id);
+        $message->update(['is_read' => false, 'read_at' => null]);
+        return $message->fresh();
+    }
+
     public function delete(int $id):void
     {
         ContactMessage::findOrFail($id)->delete();
