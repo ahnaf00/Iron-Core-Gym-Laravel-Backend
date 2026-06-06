@@ -17,7 +17,7 @@ class BlogController extends Controller
     {
         $posts = $this->blogService->listPublished($request->all());
         return $this->paginated(
-            BlogResource::collection($post)->resource,
+            BlogResource::collection($posts)->resource,
             'Posts retrieved'
         );
     }
