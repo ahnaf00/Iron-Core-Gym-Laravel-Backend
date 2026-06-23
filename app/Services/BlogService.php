@@ -69,7 +69,7 @@ class BlogService
 
         if(!empty($data['is_published']))
         {
-            $data['is_published'] = Carbon::now();
+            $data['published_at'] = Carbon::now();
         }
 
         return Blog::create($data);
@@ -100,10 +100,10 @@ class BlogService
         }
         elseif(isset($data['is_published']) && !$data['is_published'])
         {
-            $data['is_published'] = null;
+            $data['published_at'] = null;
         }
 
-        $blog->updated($data);
+        $blog->update($data);
         return $blog->fresh('author');
     }
 
