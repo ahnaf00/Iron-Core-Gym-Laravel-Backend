@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             AdminUserSeeder::class,
             MembershipPlanSeeder::class,
+            
             TrainerSeeder::class,
             ClassSessionSeeder::class,
             BlogSeeder::class,
