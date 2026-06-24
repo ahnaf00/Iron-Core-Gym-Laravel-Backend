@@ -10,7 +10,7 @@ use App\Http\Controllers\Auth\AuthController;
 // })->middleware('auth:sanctum');
 
 // Admin Controllers
-use App\Http\Controllers\Auth\DashboardController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\MemberController;
 use App\Http\Controllers\Admin\TrainerController;
 use App\Http\Controllers\Admin\ClassSessionController;
