@@ -68,8 +68,8 @@ Route::prefix('v1')->middleware(['auth:sanctum'])->group(function (){
         // Messages
         Route::get('messages', [MessageController::class, 'index']);
         Route::get('messages/{id}',[MessageController::class, 'show']);
-        Route::patch('messages/{id}/read',[MessageController::class, 'marklAsRead']);
-        Route::patch('messages/{id}/unread',[MessageController::class, 'marklAsUnread']);
+        Route::patch('messages/{id}/read',[MessageController::class, 'markAsRead']);
+        Route::patch('messages/{id}/unread',[MessageController::class, 'markAsUnread']);
         Route::delete('messages/{id}',[MessageController::class, 'destroy']);
 
         // Settings
