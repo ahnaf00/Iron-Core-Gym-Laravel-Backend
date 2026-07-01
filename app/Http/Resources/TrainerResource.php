@@ -21,7 +21,7 @@ class TrainerResource extends JsonResource
             'phone'            => $this->phone,
             'specialty'        => $this->specialty,
             'bio'              => $this->bio,
-            'photo_url'        => $this->photo_url,
+            'photo_url'        => $this->photo,
             'experience_years' => $this->experience_years,
             'is_active'        => $this->is_active,
             'classes_count'    => $this->whenCounted('classes'),
