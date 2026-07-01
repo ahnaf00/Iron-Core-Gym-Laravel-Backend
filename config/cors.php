@@ -1,4 +1,4 @@
-`<?php
+<?php
 
 return [
 
@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
+    'allowed_origins' => [env('FRONTEND_URL','http://localhost:4000')],
 
     'allowed_origins_patterns' => [],
 

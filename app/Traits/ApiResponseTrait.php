@@ -2,27 +2,31 @@
 
 namespace App\Traits;
 
+use Illuminate\Http\Resources\Json\ResourceCollection;
+
 trait ApiResponseTrait{
-    protected function success($date = null, string $message = 'Success', int $code = 200)
+    protected function success($data = null, string $message = 'Success', int $code = 200)
     {
         return response()->json([
             'success'   => true,
             'message'   => $message,
-            'data'      => $date
+            'data'      => $data
         ],$code);
     }
 
     protected function paginated($resource, string $message  = 'Success')
     {
+        $paginator = $resource instanceof ResourceCollection ? $resource->resource : $resource;
+
         return response()->json([
             'success' => true,
             'message' => $message,
-            'data' => $resource->items(),
+            'data' => $paginator->items(),
             'meta' => [
-                'current_page'  => $resource->currentPage(),
-                'last_page'     => $resource->lastpage(),
-                'per_page'      => $resource->perPage(),
-                'total'         => $resource->total()
+                'current_page'  => $paginator->currentPage(),
+                'last_page'     => $paginator->lastpage(),
+                'per_page'      => $paginator->perPage(),
+                'total'         => $paginator->total()
             ],
         ]);
     }
